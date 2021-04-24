@@ -1,9 +1,8 @@
 # RBX1
-# Introducción
-
+# Introduction
+In this project the communication between the rbx1 package and the ROS environment will be made through the same topic using the remap function in the rbx1 launch to let the robot control by keyboard.
 # Install RBX1 repository
-
-In a terminal, first go to your ROS_package source folder. Write:
+In a terminal, first go to your <catkin_ws> source folder. Write:
 ```
 cd ~/<catkin_ws>/src
 ```
