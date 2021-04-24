@@ -1,7 +1,7 @@
 # RBX1
 
 # Introduction
-In this project the communication between the rbx1 package and the ROS environment will be made, through the same topic, using the remap function in the rbx1.launch  file to let the robot control by keyboard.
+In this project the communication between the rbx1 package and the ROS environment will be made, through the same topic, using the remap function in the fake_turtlebot.launch  file to let the robot control by keyboard.
 
 # Install RBX1 repository
 In a terminal, first go to your <catkin_ws> source folder. Write:
@@ -20,6 +20,46 @@ if you get any trouble, try installing ROS dependencies:
 ```
 sudo apt-get install python-rosinstall
 ```
+# Topics identification
+First, in a terminal, you should run the ROS environmetn with:
+```
+roscore
+```
+You should see something similar to:
+```
+... logging to /home/luisc/.ros/log/00dd2b82-a49c-11eb-87a4-0025d3d70f40/roslaunch-luisc-X441UVK-5298.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+
+started roslaunch server http://luisc-X441UVK:43315/
+ros_comm version 1.12.17
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: kinetic
+ * /rosversion: 1.12.17
+
+NODES
+
+auto-starting new master
+process[master]: started with pid [5314]
+ROS_MASTER_URI=http://luisc-X441UVK:11311/
+
+setting /run_id to 00dd2b82-a49c-11eb-87a4-0025d3d70f40
+process[rosout-1]: started with pid [5328]
+started core service [/rosout]
+```
+In another terminal, you should run the fake_turtlebot.launch using:
+```
+roslaunch rbx1_bringup fake_turtlebot.launch
+```
+After run the launch, in another terminal we review the executing topics with:
+```
+rostopic list
+```
+
 # Remap
 ```
 <remap from="/cmd_vel" to="/turtle1/cmd_vel"/>
